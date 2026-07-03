@@ -102,17 +102,27 @@ function About() {
               The educators behind Woxy — guiding students with experience, empathy and a relentless focus on results.
             </p>
           </div>
-          <div className="mt-12 grid md:grid-cols-2 gap-8">
+          <div className="mt-12 grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {directors.map((d) => (
-              <article key={d.name} className="bg-card rounded-2xl overflow-hidden border border-border shadow-[var(--shadow-card)]">
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img src={d.img} alt={`${d.name} — ${d.role}`} loading="lazy" width={768} height={896}
-                       className="w-full h-full object-cover" />
+              <article
+                key={d.name}
+                className="bg-card rounded-2xl overflow-hidden border border-border hover:border-primary/20 shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-elegant)] transition-all duration-300 flex flex-col group"
+              >
+                <div className="aspect-[4/5] overflow-hidden bg-muted relative">
+                  <img
+                    src={d.img}
+                    alt={`${d.name} — ${d.role}`}
+                    loading="lazy"
+                    width={768}
+                    height={896}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
                 </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold">{d.name}</h3>
-                  <p className="text-sm text-primary font-medium">{d.role}</p>
-                  <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{d.bio}</p>
+                <div className="p-6 flex-1 flex flex-col">
+                  <h3 className="text-xl font-bold group-hover:text-primary transition-colors">{d.name}</h3>
+                  <p className="text-sm text-primary font-semibold mt-1">{d.role}</p>
+                  <p className="mt-4 text-sm text-muted-foreground leading-relaxed flex-1">{d.bio}</p>
                 </div>
               </article>
             ))}

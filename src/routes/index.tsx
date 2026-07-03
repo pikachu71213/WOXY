@@ -47,6 +47,28 @@ function Home() {
 
       <BannerStrip />
 
+      {/* Video Tour Section */}
+      <section className="py-16 bg-background border-b border-border">
+        <div className="container-x">
+          <div className="text-center max-w-2xl mx-auto mb-10">
+            <p className="text-xs uppercase tracking-widest text-primary font-semibold">Video Tour</p>
+            <h2 className="mt-2 text-3xl md:text-4xl font-bold">Watch Life at Woxy</h2>
+            <p className="mt-3 text-muted-foreground">
+              Take a virtual tour of our institute, see our classroom environment, and see how our students learn.
+            </p>
+          </div>
+          <div className="max-w-4xl mx-auto rounded-3xl overflow-hidden shadow-[var(--shadow-elegant)] border border-border aspect-video bg-black">
+            <iframe
+              className="w-full h-full border-0"
+              src="https://www.youtube.com/embed/_XIPyDSehBQ?autoplay=1&mute=1&loop=1&playlist=_XIPyDSehBQ"
+              title="Woxy Academy Video Tour"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            />
+          </div>
+        </div>
+      </section>
+
       {/* About preview */}
       <section className="py-20">
         <div className="container-x grid md:grid-cols-2 gap-12 items-center">
@@ -131,7 +153,7 @@ function Home() {
             </p>
             <div className="mt-7 flex flex-wrap justify-center gap-3">
               <a href="tel:+919466339415" className="bg-white text-primary font-semibold px-6 py-3 rounded-xl hover:bg-white/90 transition">
-                Call 094663 39415
+                Call Us
               </a>
               <Link to="/contact" className="border-2 border-white text-white font-semibold px-6 py-3 rounded-xl hover:bg-white hover:text-primary transition">
                 Visit Campus

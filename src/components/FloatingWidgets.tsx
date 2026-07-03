@@ -3,6 +3,7 @@ import { MessageCircle, X, Sparkles, Loader2, GraduationCap, Phone } from "lucid
 import { z } from "zod";
 import { toast, Toaster } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
+import registrationFlyer from "@/assets/registration-flyer.jpg";
 
 const WHATSAPP_NUMBER = "919466339415";
 const WHATSAPP_MSG = encodeURIComponent(
@@ -29,14 +30,14 @@ export function FloatingWidgets() {
   const [open, setOpen] = useState(false);
   const [submitting, setSubmitting] = useState(false);
 
-  // Auto-open the registration popup once per visitor (after 6s).
+  // Auto-open the registration popup once per visitor (after 5s).
   useEffect(() => {
     if (typeof window === "undefined") return;
     if (sessionStorage.getItem(POPUP_KEY)) return;
     const t = setTimeout(() => {
       setOpen(true);
       sessionStorage.setItem(POPUP_KEY, "1");
-    }, 6000);
+    }, 5000);
     return () => clearTimeout(t);
   }, []);
 
@@ -112,89 +113,112 @@ export function FloatingWidgets() {
           onClick={() => setOpen(false)}
         >
           <div
-            className="relative w-full max-w-md rounded-2xl bg-card shadow-2xl overflow-hidden border border-border animate-in zoom-in-95 duration-200"
+            className="relative w-full max-w-lg md:max-w-[860px] rounded-3xl bg-card shadow-[0_25px_60px_-15px_rgba(0,0,0,0.3)] overflow-hidden border border-border/80 grid grid-cols-1 md:grid-cols-12 animate-in zoom-in-95 duration-200"
             onClick={(e) => e.stopPropagation()}
           >
             <button
               onClick={() => setOpen(false)}
               aria-label="Close"
-              className="absolute top-3 right-3 z-10 p-1.5 rounded-full bg-background/80 hover:bg-background text-foreground"
+              className="absolute top-3 right-3 z-50 p-1.5 rounded-full bg-background/80 hover:bg-background text-foreground shadow-sm"
             >
               <X className="h-4 w-4" />
             </button>
 
-            <div
-              className="p-6 text-white"
-              style={{ background: "var(--gradient-brand)" }}
-            >
-              <div className="flex items-center gap-2 text-xs uppercase tracking-widest opacity-90">
-                <Sparkles className="h-3.5 w-3.5" /> Limited Seats
-              </div>
-              <h3 className="mt-2 text-2xl font-bold leading-tight">
-                Book Your <span className="underline decoration-2 underline-offset-4">Free Demo Class</span>
-              </h3>
-              <p className="mt-1 text-sm text-white/90">
-                NEET • IIT-JEE • NDA • Foundation — taught by Ashish Sir & Pawan Sir.
-              </p>
+            {/* Left side: Image */}
+            <div className="md:col-span-5 relative bg-gradient-to-b from-[#5ca3e5] to-[#0e498c] flex items-center justify-center border-b md:border-b-0 md:border-r border-border overflow-hidden">
+              <img
+                src={registrationFlyer}
+                alt="Woxy Academy Admission Open"
+                className="w-full h-full object-cover max-h-[260px] md:max-h-full"
+              />
             </div>
 
-            <form onSubmit={handleSubmit} className="p-6 space-y-3">
-              <div>
-                <label className="text-xs font-medium text-muted-foreground">Full Name *</label>
-                <input
-                  name="name"
-                  required
-                  maxLength={100}
-                  placeholder="Student's name"
-                  className="mt-1 w-full px-4 py-2.5 rounded-lg border border-border bg-background text-sm"
-                />
+            {/* Right side: Form */}
+            <div className="md:col-span-7 flex flex-col justify-center">
+              <div
+                className="py-4 px-6 text-white"
+                style={{ background: "var(--gradient-brand)" }}
+              >
+                <div className="flex items-center gap-1.5 text-xs uppercase tracking-widest opacity-95">
+                  <Sparkles className="h-3.5 w-3.5 animate-pulse" /> Limited Seats Open
+                </div>
+                <h3 className="mt-1 text-xl md:text-2xl font-bold leading-tight">
+                  Admission Enquiry <span className="underline decoration-2 underline-offset-4 decoration-white/30">2026–27</span>
+                </h3>
+                <p className="mt-0.5 text-xs md:text-sm text-white/80">
+                  Fill the form to book your free demo class.
+                </p>
               </div>
-              <div>
-                <label className="text-xs font-medium text-muted-foreground">Mobile Number *</label>
-                <input
-                  name="phone"
-                  required
-                  type="tel"
-                  maxLength={20}
-                  placeholder="10-digit mobile"
-                  className="mt-1 w-full px-4 py-2.5 rounded-lg border border-border bg-background text-sm"
-                />
-              </div>
-              <div>
-                <label className="text-xs font-medium text-muted-foreground flex items-center gap-1">
-                  <GraduationCap className="h-3.5 w-3.5" /> Class / Program *
-                </label>
-                <select
-                  name="program"
-                  required
-                  defaultValue="Foundation (6–10)"
-                  className="mt-1 w-full px-4 py-2.5 rounded-lg border border-border bg-background text-sm"
+
+              <form onSubmit={handleSubmit} className="p-5 md:p-6 space-y-3">
+                <div>
+                  <label className="text-[11px] font-semibold text-muted-foreground uppercase tracking-wider">Full Name *</label>
+                  <input
+                    name="name"
+                    required
+                    maxLength={100}
+                    placeholder="Student's name"
+                    className="mt-1 w-full px-3.5 py-2 rounded-xl border border-border bg-background text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
+                  />
+                </div>
+                <div>
+                  <label className="text-[11px] font-semibold text-muted-foreground uppercase tracking-wider">Mobile Number *</label>
+                  <input
+                    name="phone"
+                    required
+                    type="tel"
+                    maxLength={20}
+                    placeholder="10-digit mobile"
+                    className="mt-1 w-full px-3.5 py-2 rounded-xl border border-border bg-background text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
+                  />
+                </div>
+                <div>
+                  <label className="text-[11px] font-semibold text-muted-foreground uppercase tracking-wider flex items-center gap-1">
+                    <GraduationCap className="h-3.5 w-3.5 text-muted-foreground/80" /> Class / Program *
+                  </label>
+                  <select
+                    name="program"
+                    required
+                    defaultValue="Foundation (6–10)"
+                    className="mt-1 w-full px-3.5 py-2 rounded-xl border border-border bg-background text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
+                  >
+                    {programs.map((p) => (
+                      <option key={p} value={p}>{p}</option>
+                    ))}
+                  </select>
+                </div>
+
+                <button
+                  type="submit"
+                  disabled={submitting}
+                  className="btn-primary w-full justify-center py-2.5 rounded-xl disabled:opacity-70 mt-2 font-semibold text-sm cursor-pointer shadow-[0_4px_12px_rgba(var(--primary-glow),0.15)]"
                 >
-                  {programs.map((p) => (
-                    <option key={p} value={p}>{p}</option>
-                  ))}
-                </select>
-              </div>
+                  {submitting ? (
+                    <><Loader2 className="h-4 w-4 animate-spin mr-2" /> Submitting…</>
+                  ) : (
+                    <>Submit Enquiry</>
+                  )}
+                </button>
 
-              <button
-                type="submit"
-                disabled={submitting}
-                className="btn-primary w-full justify-center disabled:opacity-70"
-              >
-                {submitting ? (
-                  <><Loader2 className="h-4 w-4 animate-spin" /> Registering…</>
-                ) : (
-                  <>Register Now — It's Free</>
-                )}
-              </button>
-
-              <a
-                href="tel:+919466339415"
-                className="flex items-center justify-center gap-2 text-xs text-muted-foreground hover:text-primary"
-              >
-                <Phone className="h-3 w-3" /> Or call us at 094663 39415
-              </a>
-            </form>
+                <div className="flex flex-wrap gap-x-3 gap-y-1 justify-center pt-3 border-t border-border/50">
+                  <a
+                    href="tel:+919466339415"
+                    className="flex items-center gap-1 text-[11px] text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    <Phone className="h-3 w-3 text-primary/70" />
+                    <span>Ashish Sir: <strong className="font-semibold text-foreground">094663 39415</strong></span>
+                  </a>
+                  <span className="text-border hidden sm:inline text-xs">•</span>
+                  <a
+                    href="tel:+918950285289"
+                    className="flex items-center gap-1 text-[11px] text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    <Phone className="h-3 w-3 text-primary/70" />
+                    <span>Pawan Sir: <strong className="font-semibold text-foreground">8950285289</strong></span>
+                  </a>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       )}
