@@ -32,8 +32,8 @@ function Home() {
       <section className="border-b border-border bg-background">
         <div className="container-x grid grid-cols-2 md:grid-cols-4 gap-6 py-10">
           {stats.map((s) => (
-            <div key={s.label} className="flex items-center gap-3">
-              <div className="p-3 rounded-xl bg-secondary text-primary">
+            <div key={s.label} className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-3">
+              <div className="p-3 rounded-xl bg-secondary text-primary shrink-0">
                 <s.icon className="h-6 w-6" />
               </div>
               <div>
@@ -96,7 +96,7 @@ function Home() {
               <Link to="/courses" className="btn-outline">View Courses</Link>
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {[
               "Concept-first teaching by experienced faculty",
               "Smart classrooms, science lab & library",

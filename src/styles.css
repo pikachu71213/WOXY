@@ -52,7 +52,7 @@
   --border: oklch(0.9 0.02 240);
   --ring: oklch(0.48 0.18 252);
 
-  --gradient-hero: linear-gradient(135deg, oklch(0.48 0.18 252 / 0.9), oklch(0.32 0.12 248 / 0.7));
+  --gradient-hero: linear-gradient(135deg, oklch(0.48 0.18 252 / 0.75), oklch(0.32 0.12 248 / 0.5));
   --gradient-brand: linear-gradient(135deg, var(--primary), var(--primary-glow));
   --shadow-elegant: 0 18px 48px -18px color-mix(in oklab, var(--primary) 40%, transparent);
   --shadow-card: 0 8px 24px -10px color-mix(in oklab, var(--primary) 18%, transparent);

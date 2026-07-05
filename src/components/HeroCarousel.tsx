@@ -1,20 +1,23 @@
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Phone } from "lucide-react";
-import b1 from "@/assets/banner-1.jpg";
-import b2 from "@/assets/banner-2.jpg";
-import b3 from "@/assets/banner-3.jpg";
-import b4 from "@/assets/banner-4.jpg";
+import b20 from "@/assets/20.jpeg";
+import b21 from "@/assets/21.jpeg";
+import b22 from "@/assets/22.jpeg";
+import b23 from "@/assets/23.jpeg";
+import b24 from "@/assets/24.jpeg";
 
 const slides = [
-  { img: b1, title: "Building Concepts, Building Futures",
+  { img: b20, title: "Building Concepts, Building Futures",
     sub: "Smart coaching for School & Competitive Exams in Bhiwani." },
-  { img: b2, title: "Science Labs & Experiential Learning",
+  { img: b21, title: "Science Labs & Experiential Learning",
     sub: "Physics, Chemistry & Biology made simple, visual and hands-on." },
-  { img: b3, title: "Expert Faculty. Personal Attention.",
+  { img: b22, title: "Expert Faculty. Personal Attention.",
     sub: "Concept-first teaching for NEET, IIT-JEE, NTSE, NDA & Olympiads." },
-  { img: b4, title: "A Legacy of Achievers",
+  { img: b23, title: "A Legacy of Achievers",
     sub: "Where consistent effort meets the right guidance." },
+  { img: b24, title: "Structured Roadmap to Success",
+    sub: "Interactive sessions, weekly tests, and detailed progress tracking." }
 ];
 
 export function HeroCarousel() {

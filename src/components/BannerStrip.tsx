@@ -1,13 +1,17 @@
-import g1 from "@/assets/gallery-1.jpg";
-import g3 from "@/assets/gallery-3.jpg";
-import g5 from "@/assets/gallery-5.jpg";
-import g14 from "@/assets/gallery-14.jpg";
+import img15 from "@/assets/15.jpeg";
+import img16 from "@/assets/16.jpeg";
+import img17 from "@/assets/17.jpeg";
+import img18 from "@/assets/18.jpeg";
+import img19 from "@/assets/19.jpeg";
+import img20 from "@/assets/20.jpeg";
 
 const items = [
-  { img: g1, label: "Our Campus" },
-  { img: g3, label: "Interactive Classes" },
-  { img: g5, label: "Science Lab" },
-  { img: g14, label: "Smart Classrooms" },
+  { img: img15, label: "" },
+  { img: img16, label: "" },
+  { img: img17, label: "" },
+  { img: img18, label: "" },
+  { img: img19, label: "" },
+  { img: img20, label: "" },
 ];
 
 export function BannerStrip() {

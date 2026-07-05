@@ -113,7 +113,7 @@ export function FloatingWidgets() {
           onClick={() => setOpen(false)}
         >
           <div
-            className="relative w-full max-w-lg md:max-w-[860px] rounded-3xl bg-card shadow-[0_25px_60px_-15px_rgba(0,0,0,0.3)] overflow-hidden border border-border/80 grid grid-cols-1 md:grid-cols-12 animate-in zoom-in-95 duration-200"
+            className="relative w-full max-w-lg md:max-w-[860px] max-h-[92vh] overflow-y-auto md:overflow-y-hidden rounded-3xl bg-card shadow-[0_25px_60px_-15px_rgba(0,0,0,0.3)] border border-border/80 grid grid-cols-1 md:grid-cols-12 animate-in zoom-in-95 duration-200 md:max-h-none"
             onClick={(e) => e.stopPropagation()}
           >
             <button

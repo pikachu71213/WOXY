@@ -1,21 +1,21 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { X } from "lucide-react";
-import g1 from "@/assets/gallery-1.jpg";
-import g2 from "@/assets/gallery-2.jpg";
-import g3 from "@/assets/gallery-3.jpg";
-import g4 from "@/assets/gallery-4.jpg";
-import g5 from "@/assets/gallery-5.jpg";
-import g6 from "@/assets/gallery-6.jpg";
-import g7 from "@/assets/gallery-7.jpg";
-import g8 from "@/assets/gallery-8.jpg";
-import g9 from "@/assets/gallery-9.jpg";
-import g10 from "@/assets/gallery-10.jpg";
-import g11 from "@/assets/gallery-11.jpg";
-import g12 from "@/assets/gallery-12.jpg";
-import g13 from "@/assets/gallery-13.jpg";
-import g14 from "@/assets/gallery-14.jpg";
-import g15 from "@/assets/gallery-15.jpg";
+import g1 from "@/assets/1.jpeg";
+import g2 from "@/assets/2.jpeg";
+import g3 from "@/assets/3.jpeg";
+import g4 from "@/assets/4.jpeg";
+import g5 from "@/assets/5.jpeg";
+import g6 from "@/assets/6.jpeg";
+import g7 from "@/assets/7.jpeg";
+import g8 from "@/assets/8.jpeg";
+import g9 from "@/assets/9.jpeg";
+import g10 from "@/assets/10.jpeg";
+import g11 from "@/assets/11.jpeg";
+import g12 from "@/assets/12.jpeg";
+import g13 from "@/assets/13.jpeg";
+import g14 from "@/assets/14.jpeg";
+import g15 from "@/assets/15.jpeg";
 
 export const Route = createFileRoute("/gallery")({
   head: () => ({
@@ -64,22 +64,20 @@ function Gallery() {
 
       <section className="py-16">
         <div className="container-x">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
             {images.map((im, i) => (
               <button
                 key={i}
                 onClick={() => setActive(i)}
-                className="group relative aspect-square overflow-hidden rounded-xl bg-secondary shadow-[var(--shadow-card)]"
+                className="group relative w-full overflow-hidden rounded-xl bg-secondary shadow-[var(--shadow-card)] break-inside-avoid mb-4 block cursor-pointer"
               >
                 <img
                   src={im.src}
                   alt={im.caption}
                   loading="lazy"
-                  width={1024}
-                  height={768}
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-black/80 to-transparent text-white text-xs font-semibold opacity-0 group-hover:opacity-100 transition">
+                <div className="absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-black/85 via-black/45 to-transparent text-white text-xs font-semibold opacity-0 group-hover:opacity-100 transition duration-300">
                   {im.caption}
                 </div>
               </button>
