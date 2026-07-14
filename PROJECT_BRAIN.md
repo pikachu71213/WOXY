@@ -102,4 +102,8 @@ The website connects to Supabase to capture student registrations.
 | July 5, 2026 | Antigravity | `src/routes/gallery.tsx`, `src/components/BannerStrip.tsx`, `src/components/HeroCarousel.tsx`, `src/styles.css` | Integrated new images 1-24.jpeg: set 1-15.jpeg in gallery with dynamic columns masonry layout, 15-20.jpeg in Our Institute marquee, and 20-24.jpeg in home banner. Increased banner overlay transparency in `styles.css`. |
 | July 5, 2026 | Antigravity | `src/routes/index.tsx`, `src/components/FloatingWidgets.tsx` | Mobile responsiveness updates: stats items stack on mobile, About pillars columns set to 1 column on mobile (grid grid-cols-1 sm:grid-cols-2), and added modal height constraint (max-h-[92vh]) with scroll to prevent keybord layout issues. |
 | July 14, 2026 | Antigravity | `src/routes/__root.tsx`, `src/routes/index.tsx`, `src/components/HeroCarousel.tsx`, `src/routes/about.tsx`, `src/routes/courses.tsx`, `src/routes/gallery.tsx`, `src/routes/contact.tsx`, `Public/robots.txt`, `Public/robot.txt`, `src/routes/sitemap[.]xml.ts` | Completed complete website SEO optimization targeting keywords 'best academy in bhiwani', 'best academy in haryana', 'science academy', 'woxy academy', 'science and physics academy'. Added JSON-LD schema, fixed robots.txt and sitemap base url, added title/meta tags and image alt tag improvements. |
+| July 14, 2026 | Antigravity | `src/lib/email.ts`, `.env`, `src/routes/contact.tsx`, `src/components/FloatingWidgets.tsx` | Integrated EmailJS notifications across Contact Page Form and Homepage Admission Popup. Fails gracefully if credentials are missing. |
+| July 14, 2026 | Antigravity | `src/assets/1.jpeg` | Restored missing image file from git history to fix Vercel deploy / build compilation failure. |
+
+
 

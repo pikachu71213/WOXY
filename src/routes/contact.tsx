@@ -5,6 +5,7 @@ import { z } from "zod";
 import { toast } from "sonner";
 import { Toaster } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
+import { sendEmailNotification } from "@/lib/email";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -67,14 +68,25 @@ function Contact() {
       source: "website_contact_form",
       status: "new",
     });
-    setSubmitting(false);
 
     if (error) {
+      setSubmitting(false);
       console.error("Lead submit error:", error);
       toast.error("Could not send your message. Please call us at 094663 39415.");
       return;
     }
 
+    // Trigger EmailJS notification
+    sendEmailNotification({
+      name: parsed.data.name,
+      phone: parsed.data.phone,
+      email: parsed.data.email || undefined,
+      program: parsed.data.program,
+      message: parsed.data.message || undefined,
+      source: "Contact Us Page Form",
+    });
+
+    setSubmitting(false);
     toast.success("Thanks! We've received your enquiry and will get back to you soon.");
     setDone(true);
     (e.target as HTMLFormElement).reset();

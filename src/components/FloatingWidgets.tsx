@@ -4,6 +4,7 @@ import { z } from "zod";
 import { toast, Toaster } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 import registrationFlyer from "@/assets/registration-flyer.jpg";
+import { sendEmailNotification } from "@/lib/email";
 
 const WHATSAPP_NUMBER = "919466339415";
 const WHATSAPP_MSG = encodeURIComponent(
@@ -64,12 +65,24 @@ export function FloatingWidgets() {
       source: "website_contact_form",
       status: "new",
     });
-    setSubmitting(false);
+
     if (error) {
+      setSubmitting(false);
       console.error(error);
       toast.error("Could not register. Please call 094663 39415.");
       return;
     }
+
+    // Trigger EmailJS notification
+    sendEmailNotification({
+      name: parsed.data.name,
+      phone: parsed.data.phone,
+      program: parsed.data.program,
+      message: "Requesting free demo class via home popup modal",
+      source: "Homepage Demo Popup",
+    });
+
+    setSubmitting(false);
     toast.success("Registered! Our team will call you shortly. 🎉");
     setOpen(false);
     (e.target as HTMLFormElement).reset();
