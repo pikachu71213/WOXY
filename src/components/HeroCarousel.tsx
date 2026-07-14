@@ -9,9 +9,9 @@ import b24 from "@/assets/24.jpeg";
 
 const slides = [
   { img: b20, title: "Woxy Science & Physics Academy",
-    sub: "The Best Academy in Bhiwani & Haryana for NEET, IIT-JEE, NDA & Foundation Classes." },
+    sub: "The best institute in Bhiwani for science and tech competitive exams (NEET, IIT-JEE, NDA)." },
   { img: b21, title: "Science Labs & Experiential Learning",
-    sub: "Physics, Chemistry & Biology made simple, visual and hands-on." },
+    sub: "Master Mechanics, Organic Chemistry, Calculus, and Genetics with hands-on science labs." },
   { img: b22, title: "Expert Faculty. Personal Attention.",
     sub: "Concept-first teaching for NEET, IIT-JEE, NTSE, NDA & Olympiads." },
   { img: b23, title: "A Legacy of Achievers",

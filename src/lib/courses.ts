@@ -4,37 +4,37 @@ export const courses = [
   {
     icon: GraduationCap,
     title: "Foundation (Class 6–10)",
-    desc: "Build a rock-solid base in Maths and Science with concept-first teaching, regular tests and personal mentoring.",
+    desc: "Build a rock-solid base in Physics, Chemistry, Biology and Mathematics. Covers basic Mechanics, Atoms and Molecules, Cell Biology, and Algebraic foundations with concept-first teaching.",
     tags: ["Maths", "Science", "Mental Ability"],
   },
   {
     icon: FlaskConical,
     title: "NEET (Medical)",
-    desc: "Complete preparation for NEET-UG with NCERT mastery, biology focus, daily practice problems and full-length tests.",
+    desc: "Rigorous preparation for NEET-UG with complete mastery of NCERT, Genetics, Human Physiology, Organic Chemistry, Chemical Bonding, Mechanics, and Optics. Includes Daily Practice Problems (DPPs).",
     tags: ["Biology", "Chemistry", "Physics"],
   },
   {
     icon: Atom,
     title: "IIT-JEE (Engineering)",
-    desc: "Rigorous JEE Main & Advanced preparation with deep concept clarity, problem-solving sessions and Olympiad-level practice.",
+    desc: "Comprehensive JEE Main & Advanced preparation. Deep concept clarity in Calculus, Coordinate Geometry, Thermodynamics, Electromagnetism, Quantum Mechanics, and Organic Synthesis.",
     tags: ["JEE Main", "Advanced", "PCM"],
   },
   {
     icon: Trophy,
     title: "NTSE & Olympiads",
-    desc: "Scholarship and Olympiad training — NTSE, NSO, NSEJS, IJSO and KVPY style — to sharpen thinking and competitive temperament.",
+    desc: "Scholarship and Olympiad coaching — NTSE, NSO, NSEJS, IJSO — to sharpen analytical thinking and competitive temperament. Focus on advanced Science and Mental Ability concepts.",
     tags: ["NTSE", "NSO", "KVPY"],
   },
   {
     icon: Shield,
     title: "NDA Foundation",
-    desc: "Structured NDA written-exam coaching with maths, GAT, current affairs and disciplined daily routine for aspirants.",
+    desc: "Structured NDA written-exam coaching. Focuses on coordinate geometry, trigonometry, algebra, General Ability Test (GAT), physics fundamentals, and disciplined training for defense aspirants.",
     tags: ["Maths", "GAT", "Strategy"],
   },
   {
     icon: BookOpen,
     title: "IISER / Boards (11–12)",
-    desc: "Class 11 & 12 board preparation aligned with CBSE/HBSE plus IISER aptitude training — strong boards, stronger competitive edge.",
+    desc: "Class 11 & 12 board prep aligned with CBSE/HBSE plus IISER Aptitude Test (IAT) training. Strengthens core concepts in Physics, Chemistry, Biology and Math for board and competitive exams.",
     tags: ["CBSE", "HBSE", "IISER"],
   },
 ];

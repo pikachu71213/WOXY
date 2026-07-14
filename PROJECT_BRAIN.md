@@ -104,6 +104,8 @@ The website connects to Supabase to capture student registrations.
 | July 14, 2026 | Antigravity | `src/routes/__root.tsx`, `src/routes/index.tsx`, `src/components/HeroCarousel.tsx`, `src/routes/about.tsx`, `src/routes/courses.tsx`, `src/routes/gallery.tsx`, `src/routes/contact.tsx`, `Public/robots.txt`, `Public/robot.txt`, `src/routes/sitemap[.]xml.ts` | Completed complete website SEO optimization targeting keywords 'best academy in bhiwani', 'best academy in haryana', 'science academy', 'woxy academy', 'science and physics academy'. Added JSON-LD schema, fixed robots.txt and sitemap base url, added title/meta tags and image alt tag improvements. |
 | July 14, 2026 | Antigravity | `src/lib/email.ts`, `.env`, `src/routes/contact.tsx`, `src/components/FloatingWidgets.tsx` | Integrated EmailJS notifications across Contact Page Form and Homepage Admission Popup. Fails gracefully if credentials are missing. |
 | July 14, 2026 | Antigravity | `src/assets/1.jpeg` | Restored missing image file from git history to fix Vercel deploy / build compilation failure. |
+| July 14, 2026 | Antigravity | `src/lib/courses.ts`, `src/components/HeroCarousel.tsx`, `src/routes/about.tsx`, `src/routes/index.tsx`, `src/routes/__root.tsx` | Expanded SEO keywords targeting specific science terminologies (Mechanics, Chemistry, Calculus, Genetics) and phrases ('best institute in bhiwani for science and tech', 'bhiwani science'). |
+
 
 
 

@@ -9,9 +9,9 @@ export const Route = createFileRoute("/")({
     meta: [
       { title: "Woxy Science & Physics Academy — Best Academy in Bhiwani, Haryana" },
       { name: "description", content: "Woxy Science & Physics Academy is the best academy in Bhiwani & Haryana. We provide premium concept-based coaching for NEET, IIT-JEE, NDA, NTSE, and Foundation classes." },
-      { name: "keywords", content: "best academy in bhiwani, best academy in haryana, science academy, woxy academy, science and physics academy, NEET coaching bhiwani, IIT JEE coaching bhiwani, coaching classes in bhiwani" },
+      { name: "keywords", content: "best institute in bhiwani for science and tech, bhiwani science, science classes in bhiwani, best academy in bhiwani, best academy in haryana, science academy, woxy academy, science and physics academy, NEET coaching bhiwani, IIT JEE coaching bhiwani" },
       { property: "og:title", content: "Woxy Science & Physics Academy — Best Academy in Bhiwani, Haryana" },
-      { property: "og:description", content: "Premium coaching for NEET, IIT, NTSE, NDA & school foundations. The top rated science and physics academy in Bhiwani." },
+      { property: "og:description", content: "Premium coaching for NEET, IIT, NTSE, NDA & school foundations. The best institute in Bhiwani for science and tech." },
     ],
   }),
   component: Home,
@@ -134,9 +134,8 @@ function Home() {
               Where Concepts Become Confidence
             </h2>
             <p className="mt-4 text-muted-foreground leading-relaxed">
-              Woxy Science &amp; Competition Classes is Bhiwani's trusted institute
-              for serious learners. We specialise in <strong>NEET, IIT-JEE, NTSE,
-              NDA, IISER and Olympiads</strong> with strong foundation programs from
+              Woxy Science &amp; Physics Academy is the <strong>best institute in bhiwani for science and tech</strong>, trusted by serious learners.
+              We specialise in <strong>NEET, IIT-JEE, NTSE, NDA, IISER and Olympiads</strong> with strong foundation programs from
               Class 6 to 12. Our approach blends conceptual clarity, regular
               testing and one-on-one mentorship.
             </p>

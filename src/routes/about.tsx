@@ -64,8 +64,8 @@ function About() {
             <p className="mt-4 text-muted-foreground leading-relaxed">
               Woxy Science &amp; Competition Classes was founded with one simple
               belief: with the right guidance, no goal is out of reach. From a
-              handful of curious students to one of Bhiwani's most respected
-              science academies, our journey has always been student-first.
+              handful of curious students to the <strong>best institute in bhiwani for science and tech</strong>,
+              our journey has always been student-first. Today, we are recognized among the leading science classes in Haryana.
             </p>
             <p className="mt-3 text-muted-foreground leading-relaxed">
               Today, Woxy is home to a 5.0-rated learning ecosystem — concept-first

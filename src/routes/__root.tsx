@@ -64,7 +64,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Woxy Science & Physics Academy — Best Academy in Bhiwani, Haryana" },
       { name: "description", content: "Woxy Science & Physics Academy is the best academy in Bhiwani & Haryana for NEET, IIT-JEE, NTSE, NDA, and Foundation (Class 6-12). Proven results, expert faculty." },
-      { name: "keywords", content: "best academy in bhiwani, best academy in haryana, science academy, woxy academy, science and physics academy, Woxy Science & Competition Classes, coaching in Bhiwani, NEET coaching Bhiwani, IIT JEE coaching Bhiwani, NDA classes Bhiwani, physics coaching bhiwani" },
+      { name: "keywords", content: "best institute in bhiwani for science and tech, bhiwani science classes, best academy in bhiwani, best academy in haryana, science academy, woxy academy, science and physics academy, Woxy Science & Competition Classes, coaching in Bhiwani, NEET coaching Bhiwani, IIT JEE coaching Bhiwani, NDA classes Bhiwani, physics coaching bhiwani" },
       { name: "author", content: "Woxy Science & Physics Academy" },
       { property: "og:title", content: "Woxy Science & Physics Academy — Best Academy in Bhiwani, Haryana" },
       { property: "og:description", content: "Smart coaching for NEET, IIT, NTSE, NDA & Olympiads in Bhiwani. Best Academy in Haryana. Building Concepts. Building Futures." },
