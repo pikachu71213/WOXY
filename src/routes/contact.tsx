@@ -9,8 +9,9 @@ import { supabase } from "@/integrations/supabase/client";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact Woxy Academy — Bhiwani | 094663 39415" },
-      { name: "description", content: "Contact Woxy Science & Competition Classes, Bhiwani. Visit our campus near Maharana Pratap College, Bhagat Singh Chowk. Call 094663 39415." },
+      { title: "Contact Us | Woxy Academy — Best Academy in Bhiwani, Haryana" },
+      { name: "description", content: "Contact Woxy Science & Physics Academy in Bhiwani, Haryana. Find our map directions, address near Maharana Pratap College, and phone number 094663 39415." },
+      { name: "keywords", content: "best academy in bhiwani, science academy, woxy academy, science and physics academy, contact woxy, coaching phone number" },
       { property: "og:title", content: "Contact Woxy Academy Bhiwani" },
       { property: "og:description", content: "Address, phone and directions to Woxy Academy in Bhiwani, Haryana." },
     ],

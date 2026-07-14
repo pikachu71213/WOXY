@@ -7,10 +7,11 @@ import { Award, Users, BookOpenCheck, Sparkles, ArrowRight, Star } from "lucide-
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Woxy Academy Bhiwani — NEET, IIT, NTSE, NDA Coaching" },
-      { name: "description", content: "Woxy Science & Competition Classes in Bhiwani — concept-based coaching for NEET, IIT-JEE, NTSE, NDA, Olympiads and Foundation (Class 6–12)." },
-      { property: "og:title", content: "Woxy Academy Bhiwani — Building Concepts, Building Futures" },
-      { property: "og:description", content: "Top coaching academy in Bhiwani for NEET, IIT, NTSE, NDA, Olympiads and school foundation." },
+      { title: "Woxy Science & Physics Academy — Best Academy in Bhiwani, Haryana" },
+      { name: "description", content: "Woxy Science & Physics Academy is the best academy in Bhiwani & Haryana. We provide premium concept-based coaching for NEET, IIT-JEE, NDA, NTSE, and Foundation classes." },
+      { name: "keywords", content: "best academy in bhiwani, best academy in haryana, science academy, woxy academy, science and physics academy, NEET coaching bhiwani, IIT JEE coaching bhiwani, coaching classes in bhiwani" },
+      { property: "og:title", content: "Woxy Science & Physics Academy — Best Academy in Bhiwani, Haryana" },
+      { property: "og:description", content: "Premium coaching for NEET, IIT, NTSE, NDA & school foundations. The top rated science and physics academy in Bhiwani." },
     ],
   }),
   component: Home,
@@ -26,6 +27,61 @@ const stats = [
 function Home() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": ["EducationalOrganization", "LocalBusiness"],
+            "name": "Woxy Science & Physics Academy",
+            "alternateName": "Woxy Academy",
+            "description": "Woxy Science & Physics Academy is the best academy in Bhiwani and Haryana for NEET, IIT-JEE, NDA, NTSE, and school foundation classes.",
+            "url": "https://woxyacademy.in",
+            "logo": "https://woxyacademy.in/assets/woxy-logo.png",
+            "image": "https://woxyacademy.in/assets/woxy-logo.png",
+            "telephone": "+919466339415",
+            "priceRange": "$$",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "MRM Honda, Maharana Pratap College Gate No. 1, Bhagat Singh Chowk",
+              "addressLocality": "Bhiwani",
+              "addressRegion": "Haryana",
+              "postalCode": "127021",
+              "addressCountry": "IN"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": "28.7909",
+              "longitude": "76.1360"
+            },
+            "openingHoursSpecification": {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday"
+              ],
+              "opens": "08:00",
+              "closes": "20:00"
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "5.0",
+              "reviewCount": "150",
+              "bestRating": "5",
+              "worstRating": "1"
+            },
+            "sameAs": [
+              "https://instagram.com/woxycompetition",
+              "https://www.justdial.com/Bhiwani/Woxy-Science-Competition-Classes-Near-Mahana-Pratap-College-Bhagat-Singh-Chowk/9999PX166-X166-231228174318-E4N6_BZDET"
+            ]
+          })
+        }}
+      />
+
       <HeroCarousel />
 
       {/* Stats strip */}

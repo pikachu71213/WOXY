@@ -5,8 +5,9 @@ import { CheckCircle2 } from "lucide-react";
 export const Route = createFileRoute("/courses")({
   head: () => ({
     meta: [
-      { title: "Courses — NEET, IIT, NTSE, NDA Coaching | Woxy Academy Bhiwani" },
-      { name: "description", content: "Explore Woxy Academy's courses in Bhiwani — NEET, IIT-JEE, NTSE, NDA, Olympiads, IISER and Foundation classes for Class 6 to 12." },
+      { title: "Coaching Programs & Courses | Woxy Academy Bhiwani" },
+      { name: "description", content: "Explore competitive prep courses at Woxy Academy, the top science and physics academy in Bhiwani. Coaching for NEET, IIT-JEE, NDA, and Foundation Classes 6–12." },
+      { name: "keywords", content: "best academy in bhiwani, science academy, woxy academy, science and physics academy, coaching in bhiwani, NEET coaching, IIT JEE coaching" },
       { property: "og:title", content: "Courses at Woxy Academy Bhiwani" },
       { property: "og:description", content: "NEET, IIT-JEE, NTSE, NDA, Olympiads and strong school foundation programs." },
     ],
@@ -29,7 +30,7 @@ function Courses() {
       <section className="py-16" style={{ background: "var(--gradient-brand)" }}>
         <div className="container-x text-center text-white">
           <p className="text-xs uppercase tracking-widest opacity-80">Programs</p>
-          <h1 className="mt-3 text-4xl md:text-5xl font-bold">Our Courses</h1>
+          <h1 className="mt-3 text-4xl md:text-5xl font-bold">Our Courses — Woxy Science & Competitive Prep</h1>
           <p className="mt-4 max-w-2xl mx-auto text-white/90">
             Special preparation foundation for Class 6 to 12 — IIT | NEET | NTSE | NDA | IISER | Olympiads.
           </p>

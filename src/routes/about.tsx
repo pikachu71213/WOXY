@@ -6,10 +6,11 @@ import pawan from "@/assets/director-pawan.jpg";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Us — Woxy Science & Competition Classes, Bhiwani" },
-      { name: "description", content: "Meet Woxy Academy Bhiwani — directors Ashish Sir & Pawan Sir, our mission, teaching philosophy, and a decade of helping students crack NEET, IIT, NTSE & NDA." },
+      { title: "About Us | Woxy Science & Physics Academy in Bhiwani" },
+      { name: "description", content: "Learn why Woxy Academy is the best science academy in Haryana. Founded by Ashish Sir & Pawan Sir, we provide premium physics, maths, and competitive coaching in Bhiwani." },
+      { name: "keywords", content: "best academy in haryana, science academy, woxy academy, science and physics academy, best academy in bhiwani" },
       { property: "og:title", content: "About Woxy Academy — Directors & Story" },
-      { property: "og:description", content: "Founded by Ashish Sir & Pawan Sir, Woxy Academy is Bhiwani's trusted institute for science & competitive exam preparation." },
+      { property: "og:description", content: "Founded by Ashish Sir & Pawan Sir, Woxy Academy is the best science & physics academy in Bhiwani, Haryana." },
     ],
   }),
   component: About,
@@ -47,7 +48,7 @@ function About() {
       <section className="relative py-20 overflow-hidden" style={{ background: "var(--gradient-brand)" }}>
         <div className="container-x text-center text-white">
           <p className="text-xs uppercase tracking-widest opacity-80">About Woxy Academy</p>
-          <h1 className="mt-3 text-4xl md:text-5xl font-bold">Building Concepts, Building Futures</h1>
+          <h1 className="mt-3 text-4xl md:text-5xl font-bold">About Woxy Academy — Best Science & Physics Academy in Bhiwani</h1>
           <p className="mt-4 max-w-2xl mx-auto text-white/90">
             A decade of helping students of Bhiwani crack NEET, IIT-JEE, NTSE, NDA
             and Olympiads — with a teaching method built on clarity, consistency and care.
@@ -111,7 +112,7 @@ function About() {
                 <div className="aspect-[4/5] overflow-hidden bg-muted relative">
                   <img
                     src={d.img}
-                    alt={`${d.name} — ${d.role}`}
+                    alt={`${d.name} — Co-Director & Educator at Woxy Science & Physics Academy, Bhiwani, Haryana`}
                     loading="lazy"
                     width={768}
                     height={896}

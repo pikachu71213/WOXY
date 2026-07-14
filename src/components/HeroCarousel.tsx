@@ -8,8 +8,8 @@ import b23 from "@/assets/23.jpeg";
 import b24 from "@/assets/24.jpeg";
 
 const slides = [
-  { img: b20, title: "Building Concepts, Building Futures",
-    sub: "Smart coaching for School & Competitive Exams in Bhiwani." },
+  { img: b20, title: "Woxy Science & Physics Academy",
+    sub: "The Best Academy in Bhiwani & Haryana for NEET, IIT-JEE, NDA & Foundation Classes." },
   { img: b21, title: "Science Labs & Experiential Learning",
     sub: "Physics, Chemistry & Biology made simple, visual and hands-on." },
   { img: b22, title: "Expert Faculty. Personal Attention.",
@@ -19,6 +19,7 @@ const slides = [
   { img: b24, title: "Structured Roadmap to Success",
     sub: "Interactive sessions, weekly tests, and detailed progress tracking." }
 ];
+
 
 export function HeroCarousel() {
   const [i, setI] = useState(0);

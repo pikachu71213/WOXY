@@ -20,8 +20,9 @@ import g15 from "@/assets/15.jpeg";
 export const Route = createFileRoute("/gallery")({
   head: () => ({
     meta: [
-      { title: "Gallery — Memories from Woxy Academy Bhiwani" },
-      { name: "description", content: "A glimpse into life at Woxy Science & Competition Classes — classrooms, labs, awards, events and moments with our students in Bhiwani." },
+      { title: "Gallery & Student Life | Woxy Academy Bhiwani" },
+      { name: "description", content: "Browse photos of classrooms, science labs, library, and student events at Woxy Academy, the best science and physics academy in Bhiwani, Haryana." },
+      { name: "keywords", content: "best academy in bhiwani, science academy, woxy academy, science and physics academy, gallery, classroom photos, coaching lab" },
       { property: "og:title", content: "Gallery — Woxy Academy Bhiwani" },
       { property: "og:description", content: "Memorable moments, achievements and campus life at Woxy Academy." },
     ],
@@ -73,7 +74,7 @@ function Gallery() {
               >
                 <img
                   src={im.src}
-                  alt={im.caption}
+                  alt={`${im.caption} — Woxy Science & Physics Academy, Bhiwani, Haryana`}
                   loading="lazy"
                   className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110"
                 />
