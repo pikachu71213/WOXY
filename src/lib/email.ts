@@ -12,9 +12,9 @@ export interface EmailParams {
  * Uses environment variables: VITE_EMAILJS_SERVICE_ID, VITE_EMAILJS_TEMPLATE_ID, VITE_EMAILJS_PUBLIC_KEY.
  */
 export async function sendEmailNotification(params: EmailParams): Promise<boolean> {
-  const serviceId = "service_khu3fx4";
-  const templateId = "template_7v8zuz9";
-  const publicKey = "YRYpYF4MvwyNOgrW3";
+  const serviceId = "service_6bdq1zr";
+  const templateId = "template_g6nxlrj";
+  const publicKey = "O84XvhD_6Vbf5y5Uu";
 
   if (!serviceId || !templateId || !publicKey) {
     console.warn("EmailJS credentials not configured.");
