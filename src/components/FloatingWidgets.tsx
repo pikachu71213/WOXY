@@ -56,36 +56,52 @@ export function FloatingWidgets() {
       return;
     }
     setSubmitting(true);
-    const { error } = await supabase.from("leads").insert({
-      name: parsed.data.name,
-      phone: parsed.data.phone,
-      email: null,
-      program: parsed.data.program,
-      message: "Free demo registration (popup)",
-      source: "website_contact_form",
-      status: "new",
-    });
 
-    if (error) {
-      setSubmitting(false);
-      console.error(error);
-      toast.error("Could not register. Please call 094663 39415.");
-      return;
+    // 1. Attempt Supabase insertion
+    let dbSuccess = false;
+    try {
+      const { error } = await supabase.from("leads").insert({
+        name: parsed.data.name,
+        phone: parsed.data.phone,
+        email: null,
+        program: parsed.data.program,
+        message: "Free demo registration (popup)",
+        source: "website_contact_form",
+        status: "new",
+      });
+      if (!error) {
+        dbSuccess = true;
+      } else {
+        console.error("Supabase insert error:", error);
+      }
+    } catch (err) {
+      console.error("Supabase connection exception:", err);
     }
 
-    // Trigger EmailJS notification
-    sendEmailNotification({
-      name: parsed.data.name,
-      phone: parsed.data.phone,
-      program: parsed.data.program,
-      message: "Requesting free demo class via home popup modal",
-      source: "Homepage Demo Popup",
-    });
+    // 2. Attempt EmailJS notification
+    let emailSuccess = false;
+    try {
+      emailSuccess = await sendEmailNotification({
+        name: parsed.data.name,
+        phone: parsed.data.phone,
+        program: parsed.data.program,
+        message: "Requesting free demo class via home popup modal",
+        source: "Homepage Demo Popup",
+      });
+    } catch (err) {
+      console.error("EmailJS notification exception:", err);
+    }
 
     setSubmitting(false);
-    toast.success("Registered! Our team will call you shortly. 🎉");
-    setOpen(false);
-    (e.target as HTMLFormElement).reset();
+
+    // 3. Handle outcome
+    if (dbSuccess || emailSuccess) {
+      toast.success("Registered! Our team will call you shortly. 🎉");
+      setOpen(false);
+      (e.target as HTMLFormElement).reset();
+    } else {
+      toast.error("Could not register. Please call 094663 39415.");
+    }
   };
 
   return (

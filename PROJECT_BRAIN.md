@@ -105,6 +105,7 @@ The website connects to Supabase to capture student registrations.
 | July 14, 2026 | Antigravity | `src/lib/email.ts`, `.env`, `src/routes/contact.tsx`, `src/components/FloatingWidgets.tsx` | Integrated EmailJS notifications across Contact Page Form and Homepage Admission Popup. Fails gracefully if credentials are missing. |
 | July 14, 2026 | Antigravity | `src/assets/1.jpeg` | Restored missing image file from git history to fix Vercel deploy / build compilation failure. |
 | July 14, 2026 | Antigravity | `src/lib/courses.ts`, `src/components/HeroCarousel.tsx`, `src/routes/about.tsx`, `src/routes/index.tsx`, `src/routes/__root.tsx` | Expanded SEO keywords targeting specific science terminologies (Mechanics, Chemistry, Calculus, Genetics) and phrases ('best institute in bhiwani for science and tech', 'bhiwani science'). |
+| July 15, 2026 | Antigravity | `src/routes/contact.tsx`, `src/components/FloatingWidgets.tsx` | Made form submissions resilient to Supabase database failures. Forms will now submit successfully if either Supabase or EmailJS succeeds, preventing database downtime from breaking email deliveries. |
 
 
 

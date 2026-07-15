@@ -59,37 +59,53 @@ function Contact() {
     }
 
     setSubmitting(true);
-    const { error } = await supabase.from("leads").insert({
-      name: parsed.data.name,
-      phone: parsed.data.phone,
-      email: parsed.data.email || null,
-      program: parsed.data.program || null,
-      message: parsed.data.message || null,
-      source: "website_contact_form",
-      status: "new",
-    });
 
-    if (error) {
-      setSubmitting(false);
-      console.error("Lead submit error:", error);
-      toast.error("Could not send your message. Please call us at 094663 39415.");
-      return;
+    // 1. Attempt Supabase insertion
+    let dbSuccess = false;
+    try {
+      const { error } = await supabase.from("leads").insert({
+        name: parsed.data.name,
+        phone: parsed.data.phone,
+        email: parsed.data.email || null,
+        program: parsed.data.program || null,
+        message: parsed.data.message || null,
+        source: "website_contact_form",
+        status: "new",
+      });
+      if (!error) {
+        dbSuccess = true;
+      } else {
+        console.error("Supabase insert error:", error);
+      }
+    } catch (err) {
+      console.error("Supabase connection exception:", err);
     }
 
-    // Trigger EmailJS notification
-    sendEmailNotification({
-      name: parsed.data.name,
-      phone: parsed.data.phone,
-      email: parsed.data.email || undefined,
-      program: parsed.data.program,
-      message: parsed.data.message || undefined,
-      source: "Contact Us Page Form",
-    });
+    // 2. Attempt EmailJS notification
+    let emailSuccess = false;
+    try {
+      emailSuccess = await sendEmailNotification({
+        name: parsed.data.name,
+        phone: parsed.data.phone,
+        email: parsed.data.email || undefined,
+        program: parsed.data.program,
+        message: parsed.data.message || undefined,
+        source: "Contact Us Page Form",
+      });
+    } catch (err) {
+      console.error("EmailJS notification exception:", err);
+    }
 
     setSubmitting(false);
-    toast.success("Thanks! We've received your enquiry and will get back to you soon.");
-    setDone(true);
-    (e.target as HTMLFormElement).reset();
+
+    // 3. Handle outcome
+    if (dbSuccess || emailSuccess) {
+      toast.success("Thanks! We've received your enquiry and will get back to you soon.");
+      setDone(true);
+      (e.target as HTMLFormElement).reset();
+    } else {
+      toast.error("Could not send your message. Please call us at 094663 39415.");
+    }
   };
 
   return (
