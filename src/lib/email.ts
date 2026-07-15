@@ -12,16 +12,12 @@ export interface EmailParams {
  * Uses environment variables: VITE_EMAILJS_SERVICE_ID, VITE_EMAILJS_TEMPLATE_ID, VITE_EMAILJS_PUBLIC_KEY.
  */
 export async function sendEmailNotification(params: EmailParams): Promise<boolean> {
-  const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-  const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-  const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+  const serviceId = "service_khu3fx4";
+  const templateId = "template_7v8zuz9";
+  const publicKey = "YRYpYF4MvwyNOgrW3";
 
-  if (!serviceId || !templateId || !publicKey || serviceId === "your_service_id_here") {
-    console.warn("EmailJS credentials not configured in environment variables. Email notification skipped.", {
-      serviceId,
-      templateId,
-      publicKey
-    });
+  if (!serviceId || !templateId || !publicKey) {
+    console.warn("EmailJS credentials not configured.");
     return false;
   }
 
