@@ -32,8 +32,10 @@ export async function sendEmailNotification(params: EmailParams): Promise<boolea
         template_id: templateId,
         user_id: publicKey,
         template_params: {
+          from_name: params.name,
           name: params.name,
           phone: params.phone,
+          from_email: params.email || "Not Provided",
           email: params.email || "Not Provided",
           program: params.program,
           message: params.message || "No custom message",
